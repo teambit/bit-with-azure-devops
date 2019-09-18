@@ -1,4 +1,4 @@
-# npm install for components during CI (for projects that install components)
+# npm install for [Bit components](https://github.com/teambit/bit) during CI (for projects that install components)
 
 - Create new Pipelines and link your GitHub project.
 - Clone your repo.
