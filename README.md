@@ -1,10 +1,12 @@
 # npm install for components during CI (for projects that install components)
+
 - Create new Pipelines and link your GitHub project.
 - Clone your repo.
 - In the panel click "Edit" to open the yml file, then click on "Variables".
 - Click on "New variable", set Name to "BIT_TOKEN", and set Value need to be your bit token(bit config get user.token), then click on Save.
 - Create another variable and set Name to "BIT_COLLECTION", and the value to your bit collection that you want to export.
 - In your project root directory add an `.npmrc` file and put the following code inside:
+
 ```
 @bit:registry=https://node.bit.dev
 //node.bit.dev/:_authToken=$BIT_TOKEN
@@ -63,7 +65,7 @@ npm install bit-bin -g
 
 # bit export to private collection during CI
 - Create a private collection in [bit.dev](bit.dev).
-- Import the compiler you need.
+- Import the [compiler you need](https://bit.dev/bit/envs).
 - Track, Tag and export components to your collection, [Alert component for example](src/components/Alert.js).
 - Modify the `azure-pipelines.yml` file, and add the bit tag and bit export commands after the build:
 ```
@@ -124,3 +126,6 @@ Make sure the file has execution permissions by running `chmod +x ./git-ci.sh`.
 git pull
 bit import
 ```
+### Get help
+
+Get [help on Gitter here](https://gitter.im/bit-src/Bit).
