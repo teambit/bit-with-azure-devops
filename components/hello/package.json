@@ -1,0 +1,17 @@
+{
+  "name": "@bit/joshk.test-with-azure-import.hello",
+  "version": "0.0.2",
+  "homepage": "https://bit.dev/joshk/test-with-azure-import/hello",
+  "main": "dist/Hello.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "peerDependencies": {
+    "react": "^16.9.0"
+  },
+  "license": "SEE LICENSE IN LICENSE",
+  "bit": {
+    "env": {
+      "compiler": "bit.envs/compilers/react@1.0.2"
+    }
+  }
+}

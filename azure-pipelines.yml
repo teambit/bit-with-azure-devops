@@ -1,0 +1,37 @@
+# Node.js with React
+# Build a Node.js project that uses React.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
+
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '10.x'
+  displayName: 'Install Node.js'
+- checkout: self
+  persistCredentials: true
+
+- script: |
+    ./npm-ci.sh
+    
+    bit config set analytics_reporting false
+    bit config set anonymous_reporting false
+    bit config set user.token $(BIT_TOKEN)
+    bit config 
+ 
+    npm run bit-build
+    npm run build
+    
+    bit status
+    bit tag -a
+    bit export $(BIT_COLLECTION)
+
+    ./git-ci.sh
+
+  displayName: 'npm install & bit config & npm build & bit export components if needed & git commit back'
