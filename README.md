@@ -128,4 +128,4 @@ bit import
 ```
 ### Get help
 
-Get [help on Gitter here](https://gitter.im/bit-src/Bit).
+Get [help on Slack here](https://join.slack.com/t/bit-dev-community/shared_invite/enQtNzM2NzQ3MTQzMTg3LWI2YmFmZjQwMTkxNmFmNTVkYzU2MGI2YjgwMmJlZDdkNWVhOGIzZDFlYjg4MGRmOTM4ODAxNTIxMTMwNWVhMzg).
