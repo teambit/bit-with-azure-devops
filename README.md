@@ -1,4 +1,10 @@
-# npm install for [Bit components](https://github.com/teambit/bit) during CI (for projects that install components)
+# Bit with Azure DevOps
+
+[![Slack](https://badgen.now.sh/badge/chat/on%20Slack/cyan)](https://join.slack.com/t/bit-dev-community/shared_invite/enQtNzM2NzQ3MTQzMTg3LWI2YmFmZjQwMTkxNmFmNTVkYzU2MGI2YjgwMmJlZDdkNWVhOGIzZDFlYjg4MGRmOTM4ODAxNTIxMTMwNWVhMzg)
+
+How to integrate Bit in your workflow with Azure DevOps.
+
+## npm install for [Bit components](https://github.com/teambit/bit) during CI (for projects that install components)
 
 - Create new Pipelines and link your GitHub project.
 - Clone your repo.
@@ -30,7 +36,7 @@ Make sure the file has execution permissions by running `chmod +x ./npm-ci.sh`.
 - Now you can run the pipelines and the build should work.
 Learn more about [variables in Azure DevOps](https://docs.microsoft.com/en-us/azure/devops/pipelines/process/variables?view=azure-devops&tabs=yaml%2Cbatch)
 
-# bit import from private components during CI 
+## bit import from private components during CI 
 If you project import a component from with `bit import ...`, and your package.json have a dependencies with a locale link to components folder like this, follow the following setups:
 ```
 "@bit/<USER-NAME>.<COLLECTION-NAME>.<COMPONENT-ID>": "file:./components/<COMPONENT-ID>"
@@ -63,7 +69,7 @@ npm install bit-bin -g
   displayName: 'npm install & build'
 ```
 
-# bit export to private collection during CI
+## bit export to private collection during CI
 - Create a private collection in [bit.dev](bit.dev).
 - Import the [compiler you need](https://bit.dev/bit/envs).
 - Track, Tag and export components to your collection, [Alert component for example](src/components/Alert.js).
@@ -87,7 +93,7 @@ npm install bit-bin -g
   displayName: 'npm install & bit config & npm build & bit export components if needed'
 ```
 
-# git commit back after exported new version components during CI
+## git commit back after exported new version components during CI
 - First you need to allow azure to do this changes, follow this setups in [azure](https://docs.microsoft.com/en-us/azure/devops/pipelines/scripts/git-commands?view=azure-devops&tabs=yaml).
 - Create a `git-ci.sh` file in the root of your project, and add the following commands:
 ```
