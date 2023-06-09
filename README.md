@@ -28,8 +28,11 @@ npm install
 ```
 this will install all the dependencies from the pacakge.json.
 - Edit the `azure-pipelines.yml` file, with the following commands in script section:
+- if you are using a personal bit scope, you may need to set the npm registry as shown below
 ```
 - script: |
+    chmod +x ./npm-ci.sh
+    npm config set '@<your bit scope>:registry' https://node.bit.cloud
     ./npm-ci.sh
 ```
 Make sure the file has execution permissions by running `chmod +x ./npm-ci.sh`.
